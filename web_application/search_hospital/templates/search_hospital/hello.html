@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Hospital</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+
+</head>
+<body>
+
+<!-- header section starts      -->
+
+<header>
+
+    <a href="#" class="logo"><i></i>Finding Hospital</a>
+
+    <nav class="navbar">
+        <a class="active" href="#home">home</a>
+        <a href="#dishes">search</a>
+        <a href="#about">about</a>
+
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+        <a href="#" class="fas fa-heart"></a>
+
+    </div>
+
+</header>
+
+<!-- header section ends-->
+
+<!-- search form  -->
+
+<form action="" id="search-form">
+    <input type="search" placeholder="search here..." name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+</form>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="swiper-container home-slider">
+        <div class="swiper-wrapper wrapper">
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <img src="{% static 'images/watch1.png' %}" height="300" width="300">
+                    <span>5499 BDT</span>
+                    <h4>Wrist Watch for Men</h4>
+                    <p>Original Oleves watch, water proof upto 30 minutes</p>
+                    <a href="https://www.daraz.com.bd/products/olevs-9901-i241292356-s1184703950.html?spm=a2a0e.searchlistcategory.list.17.9f207d66nTUEgB&search=1" class="btn">order now</a>
+                </div>
+                <div >
+
+
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <img src="{% static 'images/ring1.png' %}" height="300" width="300">
+                    <span>15,999 BDT</span>
+                    <h4>Wedding Ring</h4>
+                    <p>Best quality wedding ring with 1 year warranty</p>
+                    <a href="https://leisfita.com/diamond/ring/divine-flower-shaped-with-dazzling-blue-core-diamond-ring" class="btn">order now</a>
+                </div>
+                <div >
+
+
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <img src="{% static 'images/umbrella1.jpg' %}" height="300" width="300">
+                    <span>1800 BDT</span>
+                    <h4>UV Protected Umbrella</h4>
+                    <p>Automatic umbrella for all season</p>
+                    <a href="https://www.daraz.com.bd/products/uv-protection-umbrella-i129988280.html" class="btn">order now</a>
+                </div>
+                <div >
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- dishes section starts  -->
+
+<section class="dishes" id="dishes">
+
+    <h3 class="sub-heading"> our Services </h3>
+    <h1 class="heading"> Search which you want to find </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <!img src="images/dish-1.png" alt="">
+            <h3>Nearest Hospital</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <form action="show_hospital" >
+                <button hrer="#" class="btn" type="submit">Search</button>
+            </form>
+
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <!img src="images/dish-2.png" alt="">
+            <h3>Specialist Doctor</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+
+            <form action="choose_specialist" >
+                <button hrer="#" class="btn" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <!img src="images/dish-3.png" alt="">
+            <h3>Surgery</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+
+            <form action="choose_surgery" >
+                <button hrer="#" class="btn" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <!img src="images/dish-4.png" alt="">
+            <h3>Diagonostic Center</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+
+            <form action="choose_diagonosis" >
+                <button hrer="#" class="btn" type="submit">Search</button>
+            </form>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<!-- dishes section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h3 class="sub-heading"> about this application </h3>
+    <h1 class="heading"> why use this application? </h1>
+
+    <div class="row">
+
+        <div class="content">
+            <!img src="images/about-img.png" alt="">
+            <h3>Find hospitals near you</h3>
+            <p>If you wanna find the hospital that serves your purpose best this is the way to go</p>
+            <p>You can also find specialist doctor, required diagonostic center and other required medical services</p>
+        </div>
+
+        <div class="content">
+
+            <div class="icons-container">
+                <div class="icons">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Find Hospital Near You</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Find Specialist Doctor Near You</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-headset"></i>
+                    <span>Find Place For Required Surgery</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-headset"></i>
+                    <span>Find Place For Required Diagonosis</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+
+            <a href="#home">home</a>
+            <a href="#dishes">results</a>
+            <a href="#about">about</a>
+            <a href="#menu">contact us</a>
+            <a href="#review">review</a>
+            <a href="#order">reserve</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+123-456-7890</a>
+            <a href="#">+111-222-3333</a>
+            <a href="#">sojib.24csedu.037@gmail.com</a>
+            <a href="#">anasbhai@gmail.com</a>
+            <a href="#">mumbai, india - 400104</a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/profile.php?id=100009484310790">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> copyright @ 2022 by <span>MD Hasibul Islam</span> </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- loader part  -->
+<div class="loader-container">
+    <!img src="images/loader.gif" alt="">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>

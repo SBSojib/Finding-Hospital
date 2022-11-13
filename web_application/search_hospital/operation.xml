@@ -1,0 +1,51 @@
+<operation>
+    <mysql>
+        <select>
+            <column>*</column>
+            <table>Hospital</table>
+            <condition>NULL</condition>
+        </select>
+
+        <insert>
+            <table>Passenger</table>
+            <columnName>(Name, Phone, Email, NID, Aircraft)</columnName>
+            <value>('Hamid', '0921134', 'hamid@gmail.com', '0141991', 'Ethihad')</value>
+        </insert>
+
+        <update>
+            <table>Passenger</table>
+            <newValue>Phone = '123456'</newValue>
+            <condition>Name = 'Hamid'</condition>
+        </update>
+
+        <delete>
+            <table>Passenger</table>
+            <condition>Name = 'Hamid'</condition>
+        </delete>
+    </mysql>
+
+    <oracle>
+        <select>
+            <column>*</column>
+            <table>Passenger</table>
+            <condition>NULL</condition>
+        </select>
+
+        <insert>
+            <table>Passenger</table>
+            <columnName>(Name, Phone, Email, NID, Aircraft)</columnName>
+            <value>('Hamid', '0921134', 'hamid@gmail.com', '0141991', 'Ethihad')</value>
+        </insert>
+
+        <update>
+            <table>Passenger</table>
+            <newValue>Phone = '123456'</newValue>
+            <condition>Name = 'Hamid'</condition>
+        </update>
+
+        <delete>
+            <table>Passenger</table>
+            <condition>Name = 'Hamid'</condition>
+        </delete>
+    </oracle>
+</operation>

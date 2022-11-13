@@ -1,0 +1,20 @@
+<config>
+
+    <db>
+        <dbName>mysql</dbName>
+    </db>
+
+    <mysql>
+        <host>localhost</host>
+        <user>root</user>
+        <password>Disguised</password>
+        <database>Hospital_Information</database>
+    </mysql>
+
+    <oracle>
+        <user>root</user>
+        <password>Disguised</password>
+        <database>Airways</database>
+    </oracle>
+
+</config>

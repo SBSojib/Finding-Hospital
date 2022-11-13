@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Near You</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+
+</head>
+<body>
+
+
+<header>
+
+    <a href="#" class="logo"><i></i>Finding Hospital</a>
+
+    <nav class="navbar">
+        <a class="active" href="#home">home</a>
+        <a href="#dishes">results</a>
+        <a href="#about">about</a>
+        <a href="#order">reserve</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+        <a href="#" class="fas fa-heart"></a>
+
+    </div>
+
+</header>
+
+
+<form action="" id="search-form">
+    <input type="search" placeholder="search here..." name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+</form>
+
+
+<section class="home" id="home">
+
+    <div class="swiper-container home-slider">
+        <div class="swiper-wrapper wrapper">
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <img src="{% static 'images/watch1.png' %}" height="300" width="300">
+                    <span>5499 BDT</span>
+                    <h4>Wrist Watch for Men</h4>
+                    <p>Original Oleves watch, water proof upto 30 minutes</p>
+                    <a href="https://www.daraz.com.bd/products/olevs-9901-i241292356-s1184703950.html?spm=a2a0e.searchlistcategory.list.17.9f207d66nTUEgB&search=1" class="btn">order now</a>
+                </div>
+                <div >
+
+
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <img src="{% static 'images/ring1.png' %}" height="300" width="300">
+                    <span>15,999 BDT</span>
+                    <h4>Wedding Ring</h4>
+                    <p>Best quality wedding ring with 1 year warranty</p>
+                    <a href="https://leisfita.com/diamond/ring/divine-flower-shaped-with-dazzling-blue-core-diamond-ring" class="btn">order now</a>
+                </div>
+                <div >
+
+
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <img src="{% static 'images/umbrella1.jpg' %}" height="300" width="300">
+                    <span>1800 BDT</span>
+                    <h4>UV Protected Umbrella</h4>
+                    <p>Automatic umbrella for all season</p>
+                    <a href="https://www.daraz.com.bd/products/uv-protection-umbrella-i129988280.html" class="btn">order now</a>
+                </div>
+                <div >
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+
+<section class="dishes" id="dishes">
+
+    <h3 class="sub-heading"> Your Result </h3>
+    <h1 class="heading"> Available Surgeon</h1>
+
+    <div class="box-container">
+
+        {% for item in result %}
+
+            <div class="box">
+
+                <h3>Name: {{item.3}}</h3>
+
+                <div>
+                    <span>Specialist: {{item.0}}</span>
+                </div>
+                <div>
+                    <span>Degree: {{item.4}}</span>
+                </div>
+                <div>
+                    <span>Experience Year: {{item.5}}</span>
+                </div>
+                <div>
+                    <span>Cost: {{item.2}}</span>
+                </div>
+                <div>
+                    <span>Chamber: {{item.6}}</span>
+                </div>
+
+                <a href="#order" class="btn">Reserve Now</a>
+
+
+            </div>
+
+        {% endfor %}
+
+
+
+    </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+    <h3 class="sub-heading"> about this application </h3>
+    <h1 class="heading"> why use this application? </h1>
+
+    <div class="row">
+
+        <div class="content">
+            <!img src="images/about-img.png" alt="">
+            <h3>Find hospitals near you</h3>
+            <p>If you wanna find the hospital that serves your purpose best this is the way to go</p>
+            <p>You can also find specialist doctor, required diagonostic center and other required medical services</p>
+        </div>
+
+        <div class="content">
+
+            <div class="icons-container">
+                <div class="icons">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Find Hospital Near You</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Find Specialist Doctor Near You</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-headset"></i>
+                    <span>Find Place For Required Surgery</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-headset"></i>
+                    <span>Find Place For Required Diagonosis</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="order" id="order">
+
+    <h3 class="sub-heading"> reserve now </h3>
+    <h1 class="heading"> reserve till it's available </h1>
+
+    <form action="." method="post">{% csrf_token %}
+
+        <div class="inputBox">
+            <div class="input">
+                <span>your name</span>
+                <input name="name" type="text" placeholder="enter your name">
+            </div>
+            <div class="input">
+                <span>your number</span>
+                <input name="number" type="number" placeholder="enter your number">
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <span>your email</span>
+                <input name="email1" type="text" placeholder="enter your email">
+            </div>
+            <div class="input">
+                <span>hospital email</span>
+                <input name="email2" type="test" placeholder="enter hospital's email">
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <span>your reservation</span>
+                <input name="reservation" type="text" placeholder="enter what you want to reserve">
+            </div>
+            <div class="input">
+                <span>date and time</span>
+                <input name="date_time" type="datetime-local">
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <span>your address</span>
+                <textarea name="address" placeholder="enter your address" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="input">
+                <span>patient details</span>
+                <textarea name="message" placeholder="enter patient details" id=" " cols="30" rows="10"></textarea>
+            </div>
+        </div>
+
+        <input type="submit" value="reserve" class="btn">
+
+    </form>
+
+</section>
+
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+
+            <a href="#home">home</a>
+            <a href="#dishes">results</a>
+            <a href="#about">about</a>
+            <a href="#menu">contact us</a>
+            <a href="#review">review</a>
+            <a href="#order">reserve</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+123-456-7890</a>
+            <a href="#">+111-222-3333</a>
+            <a href="#">sojib.24csedu.037@gmail.com</a>
+            <a href="#">anasbhai@gmail.com</a>
+            <a href="#">mumbai, india - 400104</a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/profile.php?id=100009484310790">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> copyright @ 2022 by <span>MD Hasibul Islam</span> </div>
+
+</section>
+
+
+<div class="loader-container">
+    <!img src="images/loader.gif" alt="">
+</div>
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>l>
